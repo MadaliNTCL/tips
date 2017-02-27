@@ -21,6 +21,10 @@ service oidentd restart
 
 Comenzi pentru znc (admin)!
 
+
+http://wiki.znc.in/Identfile
+
+
 /msg *status loadmod identfile
 /msg *identfile setfile ~/.oidentd.conf
 /msg *identfile setformat global { reply "%ident%" }
