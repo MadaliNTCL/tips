@@ -1,0 +1,30 @@
+In 'root' 
+a2enmod userdir
+
+/etc/apache2/mods-available
+
+userdir.conf
+
+
+<IfModule mod_userdir.c>
+        UserDir www/public_html/
+        UserDir disabled root
+
+        <Directory /home/*/www/public_html>
+                AllowOverride FileInfo AuthConfig Limit Indexes
+                Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+                <Limit GET POST OPTIONS>
+                        Order allow,deny
+                        Allow from all
+                </Limit>
+                <LimitExcept GET POST OPTIONS>
+                        Order deny,allow
+                        Deny from all
+                </LimitExcept>
+        </Directory>
+</IfModule>
+
+
+service apache2 restart
+
+
