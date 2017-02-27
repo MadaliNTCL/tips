@@ -19,3 +19,8 @@ Cum sa ii dai restart!
 
 service oidentd restart
 
+Comenzi pentru znc (admin)!
+
+/msg *status loadmod identfile
+/msg *identfile setfile ~/.oidentd.conf
+/msg *identfile setformat global { reply "%ident%" }
