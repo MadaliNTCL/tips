@@ -1,0 +1,8 @@
+du -cha --max-depth=1 / | grep -E "M|G"
+
+
+apoi
+
+du -cha --max-depth=1 /var | grep -E "M|G"
+
+pentru a vedea cat ocupa fiecare.
