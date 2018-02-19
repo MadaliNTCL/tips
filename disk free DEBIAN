@@ -6,3 +6,8 @@ apoi
 du -cha --max-depth=1 /var | grep -E "M|G"
 
 pentru a vedea cat ocupa fiecare.
+
+
+
+lsof / | grep deleted | awk '{ print $2 }' | xargs kill -9
+-- Pentru a sterge log'uri procese din back...
