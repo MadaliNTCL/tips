@@ -1,3 +1,6 @@
+IMPORTANT:
+-- De activat portul 113
+
 Cum sa instalezi oidentd!
 
 /etc/oidentd.conf
