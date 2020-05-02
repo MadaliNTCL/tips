@@ -28,3 +28,15 @@ userdir.conf
 service apache2 restart
 
 
+<IfModule mod_userdir.c>
+        UserDir public_html
+        UserDir disabled root
+
+        <Directory /home/*/public_html>
+                AllowOverride FileInfo AuthConfig Limit Indexes
+                Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+                Require method GET POST OPTIONS
+        </Directory>
+</IfModule>
+
+
