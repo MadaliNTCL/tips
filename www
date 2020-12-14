@@ -1,9 +1,16 @@
+============================ TLS / jSON / tDOM ==============================
+sudo apt remove tcl-tls
+wget http://archive.ubuntu.com/ubuntu/pool/universe/t/tcltls/tcl-tls_1.7.18-2_amd64.deb
+sudo dpkg -itcl-tls_1.7.18-2_amd64.deb
+
+
+apt-get install tcllib tcl-tls
+
+============================ Pentru pagina web ===============================
 In 'root' 
 a2enmod userdir
 
-/etc/apache2/mods-available
-
-userdir.conf
+/etc/apache2/mods-available/userdir.conf
 
 
 <IfModule mod_userdir.c>
