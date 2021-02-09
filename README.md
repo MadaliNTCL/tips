@@ -11,4 +11,6 @@ Debian:
 
 
 Quote:
-sudo apt-get install tcl tcl8.5 tcl8.5-dev tcllib tcl-tls
+sudo apt-get install tcl tcllib tcl-dev openssl libssl-dev build-essential libssl-dev libperl-dev pkg-config dict tdom
+
+http://quit.hi2.ro/tcl/tcl172.tar
