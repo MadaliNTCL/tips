@@ -1,7 +1,33 @@
-============================ TLS / jSON / tDOM ==============================
-sudo apt remove tcl-tls
-wget http://archive.ubuntu.com/ubuntu/pool/universe/t/tcltls/tcl-tls_1.7.18-2_amd64.deb
-sudo dpkg -itcl-tls_1.7.18-2_amd64.deb
+Cand arata doar codul php/html
+
+1. cd /etc/apache2/mods-enabled
+2. pico php7.0.conf
+
+<FilesMatch ".+\.ph(p[3457]?|t|tml)$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+<FilesMatch ".+\.phps$">
+    SetHandler application/x-httpd-php-source
+    # Deny access to raw php sources by default
+    # To re-enable it's recommended to enable access to the files
+    # only in specific virtual host or directory
+    Require all denied
+</FilesMatch>
+# Deny access to files without filename (e.g. '.php')
+<FilesMatch "^\.ph(p[3457]?|t|tml|ps)$">
+    Require all denied
+</FilesMatch>
+
+# Running PHP scripts in user directories is disabled by default
+#
+# To re-enable PHP in user directories comment the following lines
+# (from <IfModule ...> to </IfModule>.) Do NOT set it to On as it
+# prevents .htaccess files from disabling it.
+<IfModule mod_userdir.c>
+    <Directory /home/*/public_html>
+        #php_admin_flag engine Off
+    </Directory>
+</IfModule>
 
 
 apt-get install tcllib tcl-tls
